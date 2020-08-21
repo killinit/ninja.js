@@ -12,7 +12,7 @@ const App = ({ rows }) => (
 App.propTypes = {
   rows: PropTypes.arrayOf(PropTypes.shape({
     name1: PropTypes.string.isRequired,
-    email: PropTypes.string.isRequired,
+    email: PropTypes.string,
     edit_path: PropTypes.string.isRequired,
     per_id: PropTypes.number.isRequired,
   })).isRequired
