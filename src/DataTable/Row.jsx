@@ -1,18 +1,21 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const Row = (props) => {
-  const { row } = props
+const Row = ({ edit_path, name1, email }) => (
+  <tr>
+    <td>
+      <a href={edit_path}>
+        {name1}
+      </a><br />
+      <small>{email}</small>
+    </td>
+  </tr>
+);
 
-  return (
-    <tr>
-      <td>
-        <a href={row.edit_path}>
-          {row.name1}
-        </a><br />
-        <small>{row.email}</small>
-      </td>
-    </tr>
-  )
+Row.propTypes = {
+  name1: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  edit_path: PropTypes.string.isRequired,
 }
 
 export default Row

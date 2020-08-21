@@ -53,7 +53,7 @@ class DataTable extends React.Component {
   render() {
     const { rows, currentPageNumber, totalNumberOfPages } = this.state
     const rowsToRender = rows
-      .map(row => <Row key={row.per_id} row={row} />)
+      .map(row => <Row key={row.per_id} { ...row } />)
       .slice(...this.rowsInPageNumber(currentPageNumber))
 
     return(
